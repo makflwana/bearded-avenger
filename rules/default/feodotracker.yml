@@ -1,0 +1,20 @@
+parser: rss
+defaults:
+  provider: feodotracker.abuse.ch
+  tlp: green
+  alt_tlp: white
+  confidence: 85
+  altid: https://feodotracker.abuse.ch/
+  tags:
+    - feodo
+    - botnet
+    - Cridex
+    - Bugat
+    - ebanking fraud
+feeds:
+  ips:
+    parser: regex
+    remote: https://feodotracker.abuse.ch/blocklist/?download=ipblocklist
+    pattern: ^(\S+)$
+    values:
+      - observable

@@ -8,6 +8,7 @@
   post_tasks:
     - name: start cif-services
       command: systemctl start {{ item }}
+      command: systemctl enable {{ item }}
       with_items:
         - cif-router
         - cif-store
